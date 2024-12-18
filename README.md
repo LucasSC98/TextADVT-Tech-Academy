@@ -4,12 +4,13 @@
 
 
 
-Este é um projeto de um jogo de aventura baseado em texto, desenvolvido em Java, TypeScript e JavaScript, utilizando o framework Maven para gerenciamento de dependências. O jogo permite que os jogadores interajam com o ambiente e tomem decisões que afetam o desenrolar da história.
+Este é um projeto de um jogo de aventura baseado em texto, desenvolvido em Java, JavaScript, utilizando o framework Maven para gerenciamento de dependências. O jogo permite que os jogadores interajam com o ambiente e tomem decisões que afetam o desenrolar da história.
 
 ## Tecnologias Utilizadas
 
 - **Java**: Linguagem principal para a lógica do jogo.
 - **JavaScript**: Utilizado para manipulação de elementos no frontend.
+- **SQL**: Utilizado para gerenciamento do banco de dados.
 - **Maven**: Gerenciamento de dependências e build do projeto.
 - **Spark Java**: Framework para criação de rotas e servidor web.
 - **Gson**: Biblioteca para manipulação de JSON.
