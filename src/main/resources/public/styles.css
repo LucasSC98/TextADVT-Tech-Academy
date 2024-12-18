@@ -1,0 +1,229 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("haunted-house-7508035_1920.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade (0.0 a 1.0) */
+    z-index: -1; /* Certifique-se de que o overlay fique atrás do conteúdo */
+}
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-family: 'Creepster', cursive;
+    font-size: 24px;
+    color: #660000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border: 3px solid #660000; /* Borda ao redor do logo */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.house-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background: linear-gradient(45deg, #330000, #660000);
+    clip-path: polygon(50% 0, 100% 50%, 100% 100%, 0 100%, 0 50%);
+    vertical-align: middle;
+}
+
+#game {
+    width: 1010px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(255, 26, 26, 0.6); /* Alterado para o tom de vermelho */
+    border-radius: 20px;
+    background-color: rgba(20, 20, 20, 0.8); /* Cor de fundo alterada para o tom escuro */
+    position: absolute;
+    box-shadow: 0 0 20px rgba(255, 26, 26, 0.2); /* Alterado para o tom de vermelho */
+}
+
+#output {
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 26, 26, 0.3); /* Alterado para o tom de vermelho */
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo alterada */
+}
+
+input {
+    width: 50%;
+    padding: 15px;
+    margin: 15px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 60px;
+    left: 300px;
+    border: 2px solid rgba(255, 26, 26, 0.6); /* Alterado para o tom de vermelho */
+    border-radius: 15px;
+    background-color: rgba(40, 40, 40, 0.9); /* Cor de fundo alterada */
+    color: #fff;
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2); /* Alterado para o tom de vermelho */
+    transition: all 0.3s ease;
+}
+
+input:hover {
+    background-color: rgba(0, 0, 0);
+    border-color: #cc0000; /* Alterado para um tom mais escuro de vermelho */
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.5); /* Alterado para o tom de vermelho */
+}
+
+#botao {
+    width: 5%;
+    padding: 15px;
+    margin: 15px auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 60px;
+    left: 1150px;
+    background-color: #ff1a1a; /* Alterado para o tom de vermelho */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#botao:hover {
+    background-color: #cc0000; /* Alterado para o tom mais escuro de vermelho */
+    transform: scale(1.05);
+}
+
+#inventory {
+    display: none;
+    position: fixed;
+    top: 138px;
+    right: 10px;
+    width: 220px;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 26, 26, 0.6); /* Alterado para o tom de vermelho */
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.2); /* Alterado para o tom de vermelho */
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+#inventoryHeader {
+    color: #ff1a1a; /* Alterado para o tom de vermelho */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#gameMessage {
+    margin-right: 220px;
+    padding: 10px;
+    color: #ff3333; /* Alterado para o tom de vermelho */
+}
+
+#inventoryItems {
+    color: #bdc3c7;
+}
+
+.footer {
+    padding: 10px;
+    border-top: 2px solid rgba(255, 26, 26, 0.6);
+    background-color: #2c3e50;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+#help {
+    display: none;
+    position: fixed;
+    top: 138px;
+    left: 10px;
+    width: 220px;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 26, 26, 0.6); /* Alterado para o tom de vermelho */
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.2); /* Alterado para o tom de vermelho */
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+#helpHeader {
+    top: 100px;
+    left: 35px;
+    color: #ff1a1a; /* Alterado para o tom de vermelho */
+}
+
+#local {
+    color: #1abc9c;
+}
+
+#helpTexto {
+    color: #ff1a1a; /* Alterado para o tom de vermelho */
+    position: fixed;
+    font-size: smaller;
+}
+
+#command-input {
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2c3e50;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff1a1a; /* Alterado para o tom de vermelho */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cc0000; /* Alterado para o tom mais escuro de vermelho */
+}
